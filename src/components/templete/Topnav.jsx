@@ -1,8 +1,28 @@
-import React, { useState } from 'react'
+
+import axios from '../../utils/axios'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 
 function Topnav() {
 const [query, setquery] = useState("")
+const [searches, setsearches] = useState(null)
+
+const getsearch = async ()=>{
+  try {
+    const {data} = await axios.get(`/search/multi?query=${query}`)
+
+
+    setsearches(data.results);
+   
+    
+  } catch (error) {
+    console.log(error);
+    
+  }
+}
+useEffect (()=>{
+  getsearch()
+},[query])
 
 
   return (
@@ -26,11 +46,16 @@ const [query, setquery] = useState("")
       
 
        <div className='w-[50%] max-h-[50vh] bg-zinc-200 top-[90%] absolute overflow-auto' >
+        {searches && searches.map((e,i)=> (
+            <Link key={i} className='hover:text-black hover:bg-zinc-300 duration-300 font-semibold text-zinc-600 w-[100%] p-10 flex justify-start items-center border-b-2 border-zinc-200'>
+        <img  className='w-[10vh] h-[10vh] object-cover  rounded mr-5'
+        src= {`https://image.tmdb.org/t/p/original/${e.backdrop_path || e.profile_path}`}/>
+        <span>{e.name || e.title || e.original_name || e.original_title}</span>
+        </Link>
+          ))}
 
-        {/* <Link className='hover:text-black hover:bg-zinc-300 duration-300 font-semibold text-zinc-600 w-[100%] p-10 flex justify-start items-center border-b-2 border-zinc-200'>
-        <img src=""/>
-        <span>Hello everyone</span>
-        </Link> */}
+      
+        
         
        
        </div>
@@ -38,4 +63,7 @@ const [query, setquery] = useState("")
   )
 }
 
+
 export default Topnav
+
+// t=${query}
