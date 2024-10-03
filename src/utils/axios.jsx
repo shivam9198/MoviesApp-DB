@@ -6,8 +6,8 @@ const instance = axios.create({
     headers: {
         Accept:"application/json",
 
-        Authorization: 
-             "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2NmFhN2Y0ZGEzNTFmNzVhYjMxYWJlMGFiNzc0OThjZSIsIm5iZiI6MTcyNzkwMTU5Ny4xMzQ3MTcsInN1YiI6IjY2ZmRhOGNmNmZjNzRlNTc1NmY3YTg2YiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.vibBTPo9LcWE4TRd_-KcY1BF1P_Jsh4X6W59BHJEQeQ"
+        // Authorization: 
+            
 
     },
     

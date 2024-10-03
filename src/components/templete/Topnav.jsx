@@ -27,7 +27,7 @@ useEffect (()=>{
 
   return (
     <div className='w-full h-[10vh] flex relative justify-start ml-[15%] items-center '>
-      <i class="text-2xl text-zinc-400 ri-search-line"></i>
+      <i className="text-2xl text-zinc-400 ri-search-line"></i>
       <input  
       onChange={(e)=>setquery(e.target.value)}
       value={query}
@@ -38,7 +38,7 @@ useEffect (()=>{
        {query.length > 0 && (
          <i 
          onClick= {() => setquery("") }
-         class=" text-zinc-400 text-3xl ri-close-fill">
+         className=" text-zinc-400 text-3xl ri-close-fill">
             
         </i>
       ) }
