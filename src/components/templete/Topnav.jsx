@@ -26,7 +26,7 @@ useEffect (()=>{
 
 
   return (
-    <div className='w-full h-[10vh] flex relative justify-start ml-[15%] items-center '>
+    <div className='w-full h-[10vh] flex relative justify-start pl-[18%] items-center '>
       <i className="text-2xl text-zinc-400 ri-search-line"></i>
       <input  
       onChange={(e)=>setquery(e.target.value)}

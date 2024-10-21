@@ -1,18 +1,13 @@
 import axios from "axios";
+const API_KEY = process.env.REACT_APP_API_KEY;
 const instance = axios.create({
-
-    baseURL: "https://api.themoviedb.org/3/",
-
-    headers: {
-        Accept:"application/json",
-
-        // Authorization: 
-            
-
-    },
-    
-
+  baseURL: "https://api.themoviedb.org/3/",
+  headers: {
+    Accept: "application/json",
+    Authorization: `Bearer ${API_KEY}`,
+  },
 });
+
 
 export default instance;
 // eyJhdWQiOiIyMjM2NjdkMTIzOTg3MWZjNGI2ZWVlZjhkMGQ2ZGVmOCIsInN1ViI6IjVxZmQyNWFjZWVINT

@@ -10,7 +10,7 @@ function Sidebar() {
         </h1>
         <nav className='flex flex-col text-zinc-400 text-xl gap-3'>
         <h1 className='font-semibold  mt-8 mb-2 text-white'>New Feeds.</h1>
-        <Link className='hover:bg-[#6556CD]  hover:text-white p-3 rounded-xl duration-300 '>
+        <Link to="/trending" className='hover:bg-[#6556CD]  hover:text-white p-3 rounded-xl duration-300 '>
         <i className=" mr-2 ri-fire-fill"></i>
         Trending
         </Link>

@@ -16,3 +16,58 @@ border-radius: 10px;
     background: #6556CD;
 border-radius: 10px;
 }
+
+/* Style the select element */
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    outline: 0;
+    box-shadow: none;
+    border: 0 !important;
+    background: #27272a;
+    background-image: none;
+    flex: 1;
+    padding: 0 0.5em;
+    color: #fff;
+    cursor: pointer;
+    font-family: "Open Sans", sans-serif;
+    font-size: 1em;
+   
+}
+
+/* Hide the default dropdown arrow for IE */
+select::-ms-expand {
+    display: none;
+}
+
+/* Style the wrapper div */
+.select {
+    position: relative;
+    display: flex;
+    width: 18em;
+    height: 2.5em;
+    line-height: 3;
+    background: #27272a;
+    border-radius: 0.25em;
+    overflow: hidden;
+}
+
+/* Add the custom arrow using ::after on the wrapper div */
+.select::after {
+    content: "\25BC"; /* Downward arrow */
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0 1em;
+    background: #27272a;
+    color: #fff;
+    pointer-events: none;
+    transition: 0.25s all ease;
+}
+
+/* Change the arrow color on hover */
+.select:hover::after {
+    color: #6556cd;
+}
